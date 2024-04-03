@@ -9,6 +9,9 @@ readme = "README.md"
 python = "^3.11"
 tinkoff-investments = "^0.2.0b97"
 black = "^24.3.0"
+pydantic-settings = "^2.2.1"
+pydantic = "^2.6.4"
+pandas = "^2.2.1"
 
 
 [build-system]

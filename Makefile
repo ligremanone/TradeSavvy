@@ -1,2 +1,5 @@
 get_accounts:
-	PYTHONPATH=./ python tools/get_accounts.py
+	python tools/get_accounts.py
+
+get_figi:
+	python tools/get_figi.py
