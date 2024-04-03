@@ -1,0 +1,15 @@
+{
+  "instruments": [
+    {
+      "figi": "BBG004730N88",
+      "strategy": {
+        "name": "scalpel",
+        "parameters": {
+          "days_back_to_consider": 1,
+          "quantity_limit": 10,
+          "check_data": 60
+        }
+      }
+    }
+  ]
+}

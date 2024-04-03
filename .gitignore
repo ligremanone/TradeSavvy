@@ -1,2 +1,4 @@
 .venv
 .idea
+.env
+instruments_config_scalpel.json
