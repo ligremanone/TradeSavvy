@@ -10,7 +10,7 @@ from tinkoff.invest.caching.market_data_cache.cache_settings import (
 )
 from tinkoff.invest.services import Services
 
-from config import settings
+from app.config import settings
 
 
 class TinkoffClient:
@@ -60,9 +60,6 @@ class TinkoffClient:
         else:
             async for candle in self.client.get_all_candles(**kwargs):
                 yield candle
-
-    async def get_candles(self, **kwargs):
-        return await self.client.market_data.get_candles(**kwargs)
 
     async def get_last_prices(self, **kwargs):
         return await self.client.market_data.get_last_prices(**kwargs)

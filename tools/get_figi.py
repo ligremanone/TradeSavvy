@@ -6,7 +6,7 @@ from app.client import client
 
 
 async def get_figi_by_ticker(ticker: str) -> str:
-    await client.ainit()
+    await client.init()
     x = DataFrame(
         (await client.get_all_shares()).instruments,
         columns=["figi", "ticker", "name", "class_code"],
