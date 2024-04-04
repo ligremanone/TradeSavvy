@@ -536,6 +536,20 @@ files = [
 ]
 
 [[package]]
+name = "ta"
+version = "0.11.0"
+description = "Technical Analysis Library in Python"
+optional = false
+python-versions = "*"
+files = [
+    {file = "ta-0.11.0.tar.gz", hash = "sha256:de86af43418420bd6b088a2ea9b95483071bf453c522a8441bc2f12bcf8493fd"},
+]
+
+[package.dependencies]
+numpy = "*"
+pandas = "*"
+
+[[package]]
 name = "tinkoff"
 version = "0.1.1"
 description = ""
@@ -593,4 +607,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "f85d529deb0a032cbbafdf912aca91274fa57e440712039ad4ebb37658156e47"
+content-hash = "20bed3a614b023575f3f8ff54722fc7170e27f82501f8e7ca9da1e4ee1396881"
