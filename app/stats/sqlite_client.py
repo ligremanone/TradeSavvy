@@ -10,9 +10,9 @@ class StatsSQLiteClient:
     def _create_tables(self):
         self.db_client.execute(
             """CREATE TABLE IF NOT EXISTS orders (
-                id str PRIMARY KEY,
-                ticker str,
-                figi str,
+                id TEXT PRIMARY KEY,
+                ticker TEXT,
+                figi TEXT,
                 direction TEXT,
                 price REAL,
                 quantity INTEGER,
