@@ -4,7 +4,8 @@ import logging
 
 from app.client import client
 from app.config import settings
-
+from app.instruments_config.parser import instruments_config
+from app.strategies.strategy_fabric import resolve_strategy
 
 logging.basicConfig(
     level=settings.log_level,

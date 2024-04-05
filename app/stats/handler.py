@@ -64,5 +64,8 @@ class StatsHandler:
                 account_id=account_id, order_id=order_id
             )
         self.db.update_order_status(
-            order_id=order_id, status=str(order_state.execution_report_status)
+            order_id=order_id,
+            status=ORDER_EXECUTION_REPORT_STATUS.get(
+                order_state.execution_report_status
+            ),
         )

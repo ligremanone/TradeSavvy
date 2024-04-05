@@ -1,3 +1,6 @@
+start:
+	python app/main.py
+
 get_accounts:
 	python tools/get_accounts.py
 
