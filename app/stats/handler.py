@@ -1,12 +1,11 @@
 import asyncio
 
+from tinkoff.invest import AioRequestError, OrderExecutionReportStatus
 from tinkoff.invest.grpc.instruments_pb2 import INSTRUMENT_ID_TYPE_FIGI
 
 from app.client import TinkoffClient
 from app.stats.sqlite_client import StatsSQLiteClient
 from app.strategies.models import StrategyName
-from tinkoff.invest import OrderExecutionReportStatus, AioRequestError
-
 from app.utils.quotation import quotation_to_float
 
 FINAL_ORDER_STATUS = [

@@ -1,21 +1,20 @@
 import asyncio
+import datetime
 import logging
 from datetime import timedelta
 from typing import Optional
 from uuid import uuid4
-import datetime
+
 from pandas import DataFrame
 from ta.momentum import RSIIndicator
 from ta.trend import EMAIndicator
-from ta.volatility import BollingerBands, AverageTrueRange
+from ta.volatility import AverageTrueRange, BollingerBands
 from ta.volume import VolumeWeightedAveragePrice
-from tinkoff.invest import CandleInterval, Instrument, AioRequestError
+from tinkoff.invest import AioRequestError, CandleInterval, Instrument
 from tinkoff.invest.grpc.instruments_pb2 import INSTRUMENT_ID_TYPE_FIGI
-from tinkoff.invest.grpc.orders_pb2 import (
-    ORDER_DIRECTION_SELL,
-    ORDER_TYPE_MARKET,
-    ORDER_DIRECTION_BUY,
-)
+from tinkoff.invest.grpc.orders_pb2 import (ORDER_DIRECTION_BUY,
+                                            ORDER_DIRECTION_SELL,
+                                            ORDER_TYPE_MARKET)
 from tinkoff.invest.utils import now
 
 from app.client import client
@@ -24,7 +23,7 @@ from app.stats.handler import StatsHandler
 from app.strategies.base import BaseStrategy
 from app.strategies.models import StrategyName
 from app.strategies.scalpel.models import ScalpelStrategyConfig
-from app.utils.portfolio import get_position, get_order
+from app.utils.portfolio import get_order, get_position
 from app.utils.quantity import is_quantity_valid
 from app.utils.quotation import quotation_to_float
 
@@ -123,7 +122,6 @@ class ScalpelStrategy(BaseStrategy):
         df["EMASignal"] = 0
         df.loc[above_all, "EMASignal"] = 2
         df.loc[below_all, "EMASignal"] = 1
-        # df.reset_index(inplace=True, drop=True)
         condition_buy = (df["EMASignal"] == 2) & (df["bbilband"])
         condition_sell = (df["EMASignal"] == 1) & (df["bbihband"])
         df["TotalSignal"] = 0

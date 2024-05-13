@@ -13,6 +13,8 @@ pydantic-settings = "^2.2.1"
 pydantic = "^2.6.4"
 pandas = "^2.2.1"
 ta = "^0.11.0"
+isort = "^5.13.2"
+backtesting = "^0.3.3"
 
 
 [build-system]
